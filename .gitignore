@@ -2,9 +2,8 @@
 
 # dependencies
 /node_modules
+/packages/**/node_modules
 /.pnp
-.pnp.js
-.yarn/install-state.gz
 
 # testing
 /coverage
@@ -14,7 +13,10 @@
 /out/
 
 # production
-/build
+/dist
+
+# lerna
+lerna-debug.log
 
 # misc
 .DS_Store
@@ -26,11 +28,41 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+.pnp.*
+
+.gitlab-ci-token
+
+**/public/sw.js
+**/public/sw.js.map
+**/public/workbox-*.js
+**/public/workbox-*.js.map
+**/public/worker-*.js
+**/public/worker-*.js.map
+**/public/worker-*.LICENSE.txt
+
+vault/**/.auth
+vault/**/.secrets
+firebase-admin.json
+
+# IDE
+/.idea/*
+!/.idea/runConfigurations
+!/.idea/startup.xml
